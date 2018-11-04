@@ -16,6 +16,7 @@
         display: inline-block;
         width: 400px;
         margin-left: 20px;
+        
     }
     #header p {
         display: inline-block;
@@ -26,37 +27,41 @@
         font-size: 20px;
     }
 #main {
-    background-color: rgb(41, 11, 11);
     padding: 20px;
+    background: radial-gradient(ellipse at center, #1F0E13 0%, #6F5964 0%, #1F0E13 100%);
 }
     #about {
         margin-bottom: 20px;
     }
-    #about img {
-        height: 250px;
-        border: 3px solid gray;
-    }
-    #about div {
-        display: inline-block;
-        vertical-align: top;
-        width: 540px;
-        height: 256px;
-        margin-left: 28px;
-        background-color: white;
-    }
-    #about div h2, #projects div h3, #projects div h4 {
-        padding: 4px 10px;
-        background-color: rgb(136, 136, 136);
-        color: white;
-        text-align:left;
-    }
-    #about div p {
-        padding: 10px;
-    }
-    #about div a {
-        display: block;
-        padding: 10px;
-    }
+
+        #about h2, h3, h4 {
+            background-image: linear-gradient(#afaeb3,#898895,#afaeb3);
+        }
+        #about img {
+            height: 250px;
+            border: 3px solid gray;
+        }
+        #about div {
+            display: inline-block;
+            vertical-align: top;
+            width: 540px;
+            height: 256px;
+            margin-left: 28px;
+            background: linear-gradient(135deg, #FEFEFE 0%, #EDE6EC 53%, #DDCFDC 100%);
+        }
+        #about div h2, #projects div h3, #projects div h4 {
+            padding: 4px 10px;
+            background-color: rgb(136, 136, 136);
+            color: white;
+            text-align:left;
+        }
+        #about div p {
+            padding: 10px;
+        }
+        #about div a {
+            display: block;
+            padding: 10px;
+        }
     #projects div {
         display: inline-block;
         vertical-align: top;
@@ -64,6 +69,7 @@
         width: 300px;
         background-color: white;
         text-align: center;
+        background: linear-gradient(135deg, #FEFEFE 0%, #EDE6EC 53%, #DDCFDC 100%);
     }
     #projects div:last-of-type{
         margin-right: 0px;
@@ -94,5 +100,20 @@
         margin-bottom: 20px;
     }
     
+#footer {
+    background-color: rgb(230,230,230);
+    padding: 10px 0px;
+    text-align: center;
+}
 
+    #footer img{
+        width:25px;
+        height: 25px;
+        vertical-align: middle;
+    }
+
+    #footer p{
+        text-emphasis: none;
+        line-height: 35px;
+    }
 
