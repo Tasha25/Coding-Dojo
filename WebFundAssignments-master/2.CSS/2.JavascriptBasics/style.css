@@ -1,1 +1,101 @@
 /* Build your CSS from scratch in this file */
+
+*{
+margin: 0px;
+padding: 0px;
+}
+
+a {
+ color: #6fdce5;
+}
+
+body {
+    color: #c3d7eb;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    margin: auto;
+    padding: 20px; 
+}
+
+#wrapper{
+width: 1250px;
+background-color: #1d355c;
+margin: 0px auto;
+padding: 15px;
+}
+
+#header{
+height: 90px;
+background-color: #cc323a;
+margin-bottom: 15px; /*This will push both elements below it down. Instead of having to add it to the top of both elements*/
+border-radius: 10px;
+font-size: 20px;
+}
+
+#navigation{
+height: 250px;
+width: 200px;
+background-color: #2e7d8b;
+display: inline-block;
+vertical-align: top;
+padding: 20px;
+border-radius: 20px;
+}
+
+
+#navigation li {
+font-size: 16px;
+}
+
+#home {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+}
+
+.javascript_li {
+margin-left: 40px;
+list-style-type: circle;
+
+}
+.top_level_li {
+margin-left: 20px;
+}
+
+#main_content{
+height: 540px;
+width: 950px;
+background-color: #0e1821;
+display: inline-block;
+margin-left: 20px;
+padding: 15px 15px 15px 20px;
+border-radius: 10px;
+}
+
+#main_content li{
+margin-left: 20px;
+font-size: 16px;
+padding: 5px;
+}
+
+#main_content li p {
+display: inline;
+}
+
+#main_content span {
+color: #8191ff;
+}
+
+#footer {
+height: 70px;
+background-color: #5e6672;
+margin-top: 15px;
+border-radius: 30px;
+}
+
+#footer p {
+padding: 25px;
+font-size: 18px;
+}
