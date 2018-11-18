@@ -150,15 +150,28 @@ previousLengths(["hello", "dojo", "awesome"]);
 ----->
 
 
-
-
 #9: Add Seven to Most - Build a function that accepts an array. Return a new array with all the values of the original, but add 7 to each. Do not alter the original array.  Example, addSeven([1,2,3]) should return [8,9,10] in a new array.
 
 
 
 ----->
-#10: Reverse Array - Given an array, write a function that reverses values, in-place.  Example: reverse([3,1,6,4,2]) return same array, containing [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values).
+[done] #10: Reverse Array - Given an array, write a function that reverses values, in-place.  Example: reverse([3,1,6,4,2]) return same array, containing [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values).
 
+function reverse(array) {
+    var tmp = 0; 
+    var length = array.length
+    for (var i=0; i <= length; i++) {
+        tmp = array[i];
+        array[i] = array[length-i];
+        array[length-i] = tmp;
+    }
+    return array;
+}
+reverse([3,1,6,4,2]);
+
+
+Note 
+I get an undefined at the end of the loop. 
 
 ------>
 #11: Outlook: Negative - Given an array, create and return a new one containing all the values of the provided array, made negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
