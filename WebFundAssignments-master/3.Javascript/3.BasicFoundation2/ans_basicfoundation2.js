@@ -20,17 +20,17 @@
         function lowHigh(array) {
             var min = array[0];
             var max = array[0];
-            
+
             for (var i = 1; i< array.length; i++) {
-        
+
                 if (array[i] < min) {
-                    min = array[i];   
+                    min = array[i];
                 } else if (array[i]> max){
                     max = array[i];
                 }
             }
             console.log(min);
-            return max;    
+            return max;
         }
 
         console.log(lowHigh([3,-5,1]));
@@ -38,7 +38,7 @@
 
 ----->
 
-   
+
 [works] #3: Print One, Return Another - Build a function that takes array of numbers.  The function should print second-to-last value in the array, and return first odd value in the array.
 
 
@@ -127,7 +127,7 @@ function incrementTheSeconds (arr) {
             console.log (arr[i]);
         }
     }
-    return arr; 
+    return arr;
 }
 
 incrementTheSeconds([10,16,20, 25])
@@ -136,7 +136,7 @@ incrementTheSeconds([10,16,20, 25])
 ----->
 [done] #8: Previous Lengths - You are passed an array containing strings.  Working within that same array, replace each string with a number - the length of the string at previous array index - and return the array.  For example, previousLengths(["hello", "dojo", "awesome"]) should return ["hello", 5, 4].
 
- 
+
 function previousLengths (arr) {
 
     for (var i = arr.length-1; i > 0; i--) {
@@ -150,15 +150,24 @@ previousLengths(["hello", "dojo", "awesome"]);
 ----->
 
 
-#9: Add Seven to Most - Build a function that accepts an array. Return a new array with all the values of the original, but add 7 to each. Do not alter the original array.  Example, addSeven([1,2,3]) should return [8,9,10] in a new array.
+[done] #9: Add Seven to Most - Build a function that accepts an array. Return a new array with all the values of the original, but add 7 to each. Do not alter the original array.  Example, addSeven([1,2,3]) should return [8,9,10] in a new array.
 
+function addSeven(array) {
+  var newArray = [];
+  for (var index=0; index < array.length; index++) {
+    newArray.push(array[index]+7);
+  }
+  return newArray;
+}
+
+addSeven([1,2,3]);
 
 
 ----->
 [done] #10: Reverse Array - Given an array, write a function that reverses values, in-place.  Example: reverse([3,1,6,4,2]) return same array, containing [2,4,6,1,3].  Do this without creating an empty temporary array.  (Hint: you'll need to swap values).
 
 function reverse(array) {
-    var tmp = 0; 
+    var tmp = 0;
     var length = array.length
     for (var i=0; i <= length; i++) {
         tmp = array[i];
@@ -170,31 +179,89 @@ function reverse(array) {
 reverse([3,1,6,4,2]);
 
 
-Note 
-I get an undefined at the end of the loop. 
+Note
+I get an undefined at the end of the loop.
 
 ------>
-#11: Outlook: Negative - Given an array, create and return a new one containing all the values of the provided array, made negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
+[done] #11: Outlook: Negative - Given an array, create and return a new one containing all the values of the provided array, made negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
 
+function negative(array) {
+
+  var newArray = [];
+  for (var index=0; index <= array.length; index++) {
+      if (array[index]>0) {
+        newArray.push((array[index]*-1));
+        console.log("yes");
+      } else if (array[index]<0) {
+        newArray.push(array[index]);
+      }
+  }
+return newArray;
+}
+negative([1,-3,5]);
 
 
 ----->
-#12: Always Hungry - Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food".  If no array elements are "food", then print "I'm hungry" once.
+[nope] #12: Always Hungry - Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food".  If no array elements are "food", then print "I'm hungry" once.
 
+function alwaysHungry(array) {
+  for (var index=0; index <array.length; index++) {
+    if (array[index] == "food") {
+      console.log("yummy");
+    }
 
+    if (array[index] != "food")
+      return "I'm hungry";
+    }
+  }
+
+alwaysHungry(["cat","cat","food"]);
+
+// Advice from TA Andre
+// Nope. So basically when you don't see any food within the array, you want to print out im hungry. Try using a boolean to determine if you see a food or not. After the for loop you would then have to check that boolean.
 
 ------->
-#13: Swap Toward the Center - Given array, swap first and last, third and third-to-last, etc.  Input[true,42,"Ada",2,"pizza"] becomes ["pizza", 42, "Ada", 2, true].  Change [1,2,3,4,5,6] to [6,2,4,3,5,1].
+[NEED HELP/DO AGAIN] #13: Swap Toward the Center - Given array, swap first and last, third and third-to-last, etc.  Input[true,42,"Ada",2,"pizza"] becomes ["pizza", 42, "Ada", 2, true].  Change [1,2,3,4,5,6] to [6,2,4,3,5,1].
 
+function swapTowardCenter(array) {
+  var tmp = 0;
+  var length = array.length;
 
+  for (var index=0; index < length; index++){
+    tmp = array[0];
+    array[0] = array[length-index];
+    array[length-index] = tmp;
+  }
+  return array;
 
+}
+swapTowardCenter([true,42,"Ada",2,"pizza"]);
+-> [42, "Ada", 2, "pizza", undefined, true]
+
+[Chris showed this to me, still don't understand ]
+function swapToCenter(arr){
+    var temp = 0;
+    for (var i = 0 ; i < arr.length ; i++){
+        var lateIndex = arr.length - (1 + i);
+        temp = arr[i];
+        arr[i] = arr[lateIndex];
+        arr[lateIndex] = temp;
+        if (arr.length - 1 - 2*i <= 1){
+            break;
+        }
+    }
+    return arr;
+}
 
 ------->
-#14: Scale the Array - Given an array arr and a number num, multiply all values in arr by num, and return the changed array arr.  For example, scaleArray([1,2,3],3) should return [3,6,9].
+[done] #14: Scale the Array - Given an array arr and a number num, multiply all values in arr by num, and return the changed array arr.  For example, scaleArray([1,2,3],3) should return [3,6,9].
 
 
+function scaleTheArray(arr,Y) {
+  for (var index=0; index< arr.length; index++) {
+      arr[index] = ((arr[index]) * Y);
+    }
+      return arr;
+  }
 
-
-
-
-
+scaleTheArray([1,2,3],3);
