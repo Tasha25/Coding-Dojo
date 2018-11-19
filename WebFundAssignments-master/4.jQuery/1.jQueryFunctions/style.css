@@ -13,3 +13,11 @@ div p {
 .red {
     color: red;
 }
+
+.completed {
+    color: green;
+}
+
+.not-completed {
+  color: red;
+}
